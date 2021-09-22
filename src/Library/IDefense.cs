@@ -2,7 +2,7 @@ namespace Program
 {
     public interface IDefense
     {
-        int DEF {get}
+        int DEF {get; private set;}
         
     }
 }
