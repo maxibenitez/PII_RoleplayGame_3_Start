@@ -4,93 +4,54 @@
 
 ### FIT - Universidad Católica del Uruguay
 
-# Encuentros futuros de la Tierra Media
+<br>
 
-En este juego, varios personajes cobrarán vida en la Tierra Media.
+# Encuentros de tipos en la Tierra Media
 
-## Personajes [Characters]
+En este juego, los personajes han cobrado vida. Pero de una forma bastante desorganizada. 
 
-Existen diferentes tipos de personajes provenientes de distintas especies.
+Tenemos gran variedad de elementos que podemos intuír que son del mismo tipo. Pero esto no está reflejado en nuestro código. En este ejercicio vamos a modificar nuestro proyecto para mejorar el código que tenemos hasta ahora. 
 
-### [Magos _[Wizards]_](https://lotr.fandom.com/wiki/Wizards)
+## Personajes _[Characters]_
 
-Los magos, también conocidos como Istari, tienen el dominio de la mágia, que provee capacidades de ataque y de defensa. La mágia es innata a ellos, aunque pueden adquirir más mediente el estudio de la asignatura, y mediante elementos que la potencian (por ejemplo, un [bastón mágico](https://ringsdb.com/bundles/cards/142008.png)).
+Quizás hayas notado que hay varias propiedades que los personajes tienen en común unos con otros. Todos ellos:
 
-### [Elfos _[Elves]_](https://lotr.fandom.com/wiki/Elves)
+- manejan un nivel de vida
 
-Los elfos son criaturas supernaturales que también poseen características mágicas, y en general son conocidos por ayudar a los demás.
+- pueden ser atacados
 
-### [Enanos _[Dwarves]_](https://lotr.fandom.com/wiki/Dwarves)
+- pueden ser curados
 
-Los enanos son seres temperamentales, muy buenos en combate con las armas, físicamente fuertes, con mucha resistencia y leales a sus amigos.
+- pueden tener items
+
+Adicionalmente, los magos pueden tener elementos mágicos (a diferencia de los no-magos, que _no pueden tener elementos mágicos_). No olvides que los elementos mágicos también sirven para atacar y defender.
 
 ## Elementos _[Items]_
 
-Los personajes necesitan de ciertos elementos para poder combatir con sus enemigos. Estos elementos pueden ser ropaje (túnica, por ejemplo), armas (como un hacha o una espada), entre otros. 
+Existen muchos elementos, y podemos encontrar algunas cosas en común:
 
-Existe un elemento particularmente interesante, llamado libro de hechizos. El libro de hechizos es tan poderoso como hechizos tenga en él, y representa el conocimiento de un mago.
+- Algunos elementos son armas, que le permiten a los personajes atacar a otros. Éstas tienen un valor de ataque.
 
-# Desafío realizado por Santiago Alonso, Maximiliano Benítez, Dana Castroman y Marcelo Arrarte
-# Link Git: https://github.com/Team9-UCU-PII/PII_RoleplayGame_1_team9.git
+- Otros elementos son de defensa y permiten defender ataques, y por ende tienen un valor de defensa.
 
-## Parte 0: Repo :heavy_check_mark:
+- ¡Algunos permiten atacar **y** defender! En cuyos casos tienen valor de ataque y de defensa.
 
-Cada equipo deberá crear un repo para el desarrollo de este juego. Todos los miembros del equipo deberán tener acceso al repo.
+- Hay elementos que son mágicos y elementos que no. Esto es importante porque sólo los Magos pueden hacer uso de elementos mágicos.
 
-## Parte 1: Modelado :heavy_check_mark:
+- No existe solamente un hechizo, ¡existen muchos! Y el libro de hechizos puede tener muchos hechizos diferentes.
 
-En equipo, modelen las clases y las colaboraciones que son necesarias para representar los elementos del juego mencioandos.
+# Desafío
 
-Recuerden: los personajes deben poder tener items. Por ejemplo, los magos pueden tener un bastón mágico, un libro de hechizos (con hechizos), etc.
+## Parte 1: Refactoring
 
-Deberán crear y subir al repositorio el modelo en forma de diagrama de clases.
-
-## Parte 2: Creación :heavy_check_mark:
-
-Cada equipo deberá crear las clases representadas en el modelo anterior. Cada integrante deberá crear, al menos:
-
-- Un personaje  🧙‍♂️
-
-- Dos elementos ⚔️ 🛡
-
-> Recuerden crear el libro de hechizos y sus hechizos (existe un solo _tipo_ de hechizo por ahora).
-
-### Personajes
-
-Los personajes tienen, además de sus items, un nombre y una cantidad de vida limitada. 
-
-Sus items pueden además quitarse o cambiarse por otros similares (por ejemplo, darle a un mago un bastón mágico nuevo, o simplemente quitarle el que tiene).
-
-### Elementos
-
-Los elementos tienen un valor de ataque y un valor de defensa. Es posible que en algunos casos alguno de estos valores sea 0. Por ejemplo, un elemento "Armadura" puede tener valor de ataque 0.
-
-> [Inspiración](https://ringsdb.com/find?q=t%3Aattachment)
-
-**Cada integrante debe trabajar en una rama distinta del repositorio.**
-
-Finalmente, integrar el código creado al repositorio utilizando [Pull Requests](https://help.github.com/es/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request). 
->Recuerden: los Pull Requests deben ser revisados y aceptados por _otro_ integrante del equipo.
-
-## Parte 3: Cobrando poder :heavy_check_mark:
-
-Agregar al proyecto el siguiente comportamiento:
-
-- Obtener el valor total de ataque de un personaje. ⚔️
-
-- Obtener el valor total de defensa de un personaje. 🛡
-
-- Atacar a un personaje (disminuir su vida en cierta cantidad) 🗡
-
-- Curar a un personaje (recuperar su vida inicial) 🚑
-
-Justificar con comentarios en el código las decisiones que tomaron para resolver esta parte del desafío, incluyendo si utilizaron algun patrón o principio.
-
-## Parte 4: Testing :heavy_check_mark:
-
-Deberán escribir casos de test para probar su programa. Como equipo tendrán que evaluar qué casos de test son necesarios, y deberán incluír la justificación de cada caso de test como comentario en el código del proyecto.
-
-Todos los integrantes del equipo deben participar de la escritura de tests (contribuyendo al menos uno de los casos). Deben trabajar en ramas del repositorio separadas (al igual que en la [Parte 2](#parte-2-creación)) e integar el trabajo utilizando Pull Requests.
+Refactorizen<sup>1</sup> el código de la [parte 1](https://github.com/ucudal/PII_RoleplayGame_1_Start), agregando las abstracciones que identifiquen de la descripción de elementos y personajes anterior.
 
 
+## Parte 2: Comprobar que sigue funcionando
 
+Como bien saben, el proceso de refactoring cambia la estructura del código sin cambiar su comportamiento. Para demostrar esto, agreguen los casos de test de la [parte 1](https://github.com/ucudal/PII_RoleplayGame_1_Start#parte-4-testing) (o escribanlos si no llegaron a escribirlos) y comprueben que todo siga funcionando igual que antes (los tests dan verde).
+
+
+*******
+
+<sup>1</sup> _«La refactorización (del inglés refactoring) es una técnica de la ingeniería de software para reestructurar un código fuente, alterando su estructura interna sin cambiar su comportamiento externo.» [Fuente](https://es.wikipedia.org/wiki/Refactorizaci%C3%B3n)_
