@@ -1,6 +1,6 @@
 namespace Program
 {
-    public class Pechera : IItem: IDefense
+    public class Pechera : IItem , IDefense
     {
         public string Name {get; set;}
 
