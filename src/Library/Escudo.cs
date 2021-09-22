@@ -2,23 +2,13 @@ using System.Collections;
 
 namespace Program
 {
-  public class Escudo : IItem, IDefense
+  public class Escudo : IItem, IDefense, IAttack
   {
     private int _def;
 
     public string Name{get; set;}
 
-    public int DEF 
-    {
-      get
-      {
-        return this._def;
-      }
-      private set
-      {
-        this._def = value;
-      }
-    }
+    public int DEF{get; set;}
 
     public Escudo(string name, int def)
     {

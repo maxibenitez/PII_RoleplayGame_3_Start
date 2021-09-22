@@ -8,18 +8,7 @@ namespace Program
 
     public string Name{get; set;}
 
-    public int DMG
-    {
-      get
-      {
-        return this._dmg;
-      }
-      private set
-      {
-        this._dmg = value;
-      }
-
-    }
+    public int DMG{get; set;}
 
     public Espada(string name, int dmg)
     {
