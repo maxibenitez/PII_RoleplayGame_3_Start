@@ -2,16 +2,16 @@ namespace Program
 {
     public interface IItem
     {
-        string Name{get; set;}
+        string Nombre{get; set;}
     }
 
     public interface IDefense
     {
-        int DEF {get; private set;}   
+        int DEF {get; set;}   
     }
 
     public interface IAttack
     {
-        int DMG {get; private set;}
+        int DMG {get; set;}
     }
 }
