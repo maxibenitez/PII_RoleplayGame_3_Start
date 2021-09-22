@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Text;
+
 namespace Program
 {
     public class Libro : IItem
@@ -13,11 +16,11 @@ namespace Program
             }
         }
 
-        public string Nombre {get;set;}
+        public string Name {get;set;}
        
         public Libro (string nombre)
         {
-            this.Nombre = nombre;
+            this.Name = nombre;
         }
 
         public void AñadirHechizo(Hechizo hechizo)
@@ -28,13 +31,10 @@ namespace Program
         public string VerHechizosGuardados()
         {
             StringBuilder result = new StringBuilder();
-            if (this.Tipo == "LIBRO")
-            {
                 foreach (Hechizo spell in this.HechizosGuardados)
                 {
                     result.Append($" * {spell.Nombre} \n");
                 }
-            }
             return result.ToString();
         }
     }

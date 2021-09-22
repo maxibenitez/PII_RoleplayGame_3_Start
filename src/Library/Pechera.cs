@@ -6,7 +6,7 @@ namespace Program
 
         public int DEF {get; private set;}
         
-        public Item (string nombre, int def)
+        public Pechera (string nombre, int def)
         {
             this.Name = nombre;
             this.DEF = def;

@@ -7,11 +7,11 @@ namespace Program
 
     public interface IDefense
     {
-        int DEF {get; private set;}   
+        int DEF {get;}   
     }
 
     public interface IAttack
     {
-        int DMG {get; private set;}
+        int DMG {get;}
     }
 }
