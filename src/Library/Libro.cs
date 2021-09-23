@@ -1,11 +1,14 @@
+using System.Collections.Generic;
+using System.Text;
+
 namespace Program
 {
     public class Libro : IItem
     {
 
-        private ArrayList hechizosGuardados = new ArrayList();
+        private List<IHechizo> hechizosGuardados = new List<IHechizo>();
 
-        public ArrayList HechizosGuardados 
+        public List<IHechizo> HechizosGuardados 
         {
             get
             {
@@ -20,7 +23,7 @@ namespace Program
             this.Nombre = nombre;
         }
 
-        public void AñadirHechizo(Hechizo hechizo)
+        public void AñadirHechizo(IHechizo hechizo)
         {
             this.HechizosGuardados.Add(hechizo);
         }
@@ -28,12 +31,10 @@ namespace Program
         public string VerHechizosGuardados()
         {
             StringBuilder result = new StringBuilder();
-            if (this.Tipo == "LIBRO")
+            
+            foreach (Hechizo spell in this.HechizosGuardados)
             {
-                foreach (Hechizo spell in this.HechizosGuardados)
-                {
-                    result.Append($" * {spell.Nombre} \n");
-                }
+                result.Append($" * {spell.Nombre} \n");
             }
             return result.ToString();
         }
