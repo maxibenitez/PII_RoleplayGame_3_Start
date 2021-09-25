@@ -4,9 +4,9 @@ namespace Program
   {
     public string Name{get; set;}
 
-    public int DEF{get; set;}
+    public int DEF{get; private set;}
 
-    public int DMG{get; set;}
+    public int DMG{get; private set;}
 
     public Escudo(string name, int def, int dmg)
     {
