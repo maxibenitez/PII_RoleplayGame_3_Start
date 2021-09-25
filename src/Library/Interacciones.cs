@@ -6,16 +6,16 @@ namespace Program
     {
         //esta clase se responsabiliza de manejar los diferentes tipos de interacciones a nivel matematico, ya que puede facilmente acceder a los datos de los
         //personajes implicados y realizar las operaciones y controles necesarios. Es aplicación de EXPERT y SRP, al delegar la impresión a ConsoleLogger
-        public static void Ataque(Personaje atacante, Personaje atacado)
+        public static void Ataque(IPersonaje atacante, IPersonaje atacado)
         {
             atacado.HP -= atacante.Ataque - atacado.Defensa;
 
             //se le envía los datos de los personajes implicados en ataque para que se imprima en pantalla
             ConsoleLogger.ImprimirAtaque(atacante, atacado);
         }
-        public static void LanzamientoHechizo(Personaje lanzador, Hechizo hechizo, Personaje objetivo)
+        public static void LanzamientoHechizo(Mago lanzador, Hechizo hechizo, IPersonaje objetivo)
         {
-            if(hechizo.TipoEfecto == "Daño" && lanzador.LibroEquipado.HechizosGuardados.Contains(hechizo))
+            if(hechizo.TipoEfecto == "Daño" && lanzador.Inventario.Contains(hechizo))
             {
                 objetivo.HP -= hechizo.Poder;
 
