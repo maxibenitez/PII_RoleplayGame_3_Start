@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Linq;
-
-namespace Program
+﻿namespace Program
 {
     class Program
     {
