@@ -15,14 +15,14 @@ namespace Program
         }
         public static void LanzamientoHechizo(Mago lanzador, Hechizo hechizo, IPersonaje objetivo)
         {
-            if(hechizo.TipoEfecto == "Daño" && lanzador.Inventario.Contains(hechizo))
+            if(hechizo.TipoEfecto == "Daño" && lanzador.LibroEquipado.Contains(hechizo))
             {
                 objetivo.HP -= hechizo.Poder;
 
                 //se le envía los datos de los personajes implicados lanzamiento de hechizo de ataque para que se imprima en pantalla
                 ConsoleLogger.ImprimirLanzamientoHechizo(lanzador, hechizo, objetivo);
             }
-            if(hechizo.TipoEfecto == "Curación" && lanzador.LibroEquipado.HechizosGuardados.Contains(hechizo))
+            if(hechizo.TipoEfecto == "Curación" && lanzador.LibroEquipado.Contains(hechizo))
             {
                 objetivo.HP += hechizo.Poder;
 

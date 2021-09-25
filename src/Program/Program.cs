@@ -75,14 +75,31 @@ namespace Program
             GetItem("Libro Maestro de Magia").AñadirHechizo(bigDmg);
         }
 
-        private static void agregarItemAlCatalogo(string name, string tipo, int daño, int def)
+        private static void agregarItemAlCatalogo(string name, string tipo, int daño, int defensa)
         {
-            catalogoItems.Add(new Item(name, tipo, daño, def));
+            switch (tipo.ToUpper())
+            {
+                case "ESPADA":
+                catalogoItems.Add(new Espada(name,daño));
+                break;
+
+                case "ESCUDO":
+                catalogoItems.Add(new Escudo(name,defensa,daño));
+                break;
+
+                case "PECHERA":
+                catalogoItems.Add(new Pechera(name,defensa));
+                break;
+
+                case "LIBRO":
+                catalogoItems.Add(new Libro(name));
+                break;
+            }
         }
 
-        private static Item GetItem(string nombreItem)
+        private static IItem GetItem(string nombreItem)
         {
-            var query = from Item item in catalogoItems where item.Nombre == nombreItem select item;
+            var query = from IItem item in catalogoItems where item.Name == nombreItem select item;
             return query.FirstOrDefault();
         }
     }

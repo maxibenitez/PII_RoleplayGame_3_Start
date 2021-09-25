@@ -19,8 +19,17 @@ namespace Program
       this.Inventario.Remove(item);
     }
 
-    public IAttack Arma{get;}
-
+    public IAttack Arma
+    {
+      get
+      {
+        foreach (IAttack item in Inventario)
+        {
+          return item;
+        }
+        return new Espada ("Manos", 0);
+      }
+    }
     public int Ataque 
     {
       get
@@ -28,7 +37,17 @@ namespace Program
         return Arma.DMG + IPersonaje.K_AtaqueBase;
       }
     }
-    public IDefense Armadura{get;}
+    public IDefense Armadura
+    {
+      get
+      {
+        foreach (IDefense item in Inventario)
+        {
+          return item;
+        }
+        return new Pechera ("Desnudo", 0);
+      }
+    }
     public int Defensa 
     {
       get
