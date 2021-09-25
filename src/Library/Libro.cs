@@ -16,11 +16,11 @@ namespace Program
             }
         }
 
-        public string Nombre {get;set;}
+        public string Name {get;set;}
        
         public Libro (string nombre)
         {
-            this.Nombre = nombre;
+            this.Name = nombre;
         }
 
         public void AñadirHechizo(IHechizo hechizo)
