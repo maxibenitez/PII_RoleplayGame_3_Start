@@ -11,9 +11,9 @@ namespace Program
         private int _dmg;
         private int _def;
 
-        private ArrayList hechizosGuardados;
+        private List<IHechizo> hechizosGuardados;
 
-        public ArrayList HechizosGuardados 
+        public List<IHechizo> HechizosGuardados 
 
         {
             get
