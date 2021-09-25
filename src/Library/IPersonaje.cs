@@ -4,11 +4,11 @@ namespace Program
 {
     public interface IPersonaje
     {
-        private const int K_AtaqueBase = 5;
+        public const int K_AtaqueBase = 5;
 
-        private const int K_DefensaBase = 2;
+        public const int K_DefensaBase = 2;
 
-        private const int K_maxHP = 100;
+        public const int K_maxHP = 100;
 
         public string Nombre{get; set;}
 
@@ -23,8 +23,6 @@ namespace Program
         public IAttack Arma{get;}
 
         public IDefense Armadura{get;}
-
-        public void Atacar(IPersonaje personaje);
     }
 }
 

@@ -4,7 +4,7 @@ namespace Program
   {
     public string Name{get; set;}
 
-    public int DMG{get; private set;}
+    public int DMG{get; set;}
 
     public Espada(string name, int dmg)
     {
