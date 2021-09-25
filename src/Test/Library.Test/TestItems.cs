@@ -12,17 +12,13 @@ namespace Test.Library
         public void itemCreationTest()
         //se testea las asignaciones corerctas funcionen y las erroneas rechazadas
         {
-            Item espadaAvanzada = new Item("Espada de Diamante", "ARMA", 16, 0);
-            string expectedType = "ARMA";
+            Espada espadaAvanzada = new Espada("Espada de Diamante",16);
             string expectedName = "Espada de Diamante";
             int expectedDMG = 16;
-            int expectedDEF = 0;
             Assert.AreEqual(expectedName, espadaAvanzada.Nombre);
-            Assert.AreEqual(expectedType, espadaAvanzada.Tipo);
             Assert.AreEqual(expectedDMG, espadaAvanzada.DMG);
-            Assert.AreEqual(expectedDEF, espadaAvanzada.DEF);
-
         }
+
         [Test]
         public void spellCreationTest()
         //se testea la clase hechizo y su uso
@@ -40,17 +36,13 @@ namespace Test.Library
         public void itemAndSpellTest()
         //testeo de items especiales LIBRO y hechizos juntos (collab)
         {
-            Item libro = new Item("Sapo Ruperto", "LIBRO", 0, 0);
+            Libro libro = new Libro("Sapo Ruperto");
             Hechizo spell1 = new Hechizo ("RupertoRocanrol", "Daño", 9000);
             Hechizo spell2 = new Hechizo ("SanaSanaColitaDeRana", "Curación", 9000);
             libro.AñadirHechizo(spell1);
             libro.AñadirHechizo(spell2);
             Assert.IsTrue(libro.HechizosGuardados.Contains(spell1));
             Assert.IsTrue(libro.HechizosGuardados.Contains(spell2));
-
         }
-
     }
-
-
 }
