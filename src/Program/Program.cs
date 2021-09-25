@@ -11,30 +11,32 @@ namespace Program
             popularCatalogoItems();
 
         //los personajes los ideaban cada integrante, Alonso solo escribió la implementación
-            Personaje maxiChar = new Personaje("Legolas", "ELFO");
+            Elfo maxiChar = new Elfo("Legolas");
             agregarItemAlCatalogo("Arco élfico", "ARMA", 14, 0);
             agregarItemAlCatalogo("Cota de Malla élfica", "ARMADURA", 0, 8);
             maxiChar.AddItem(GetItem("Arco élfico"));
             maxiChar.AddItem(GetItem("Cota de Malla élfica"));
 
-            Personaje danaChar = new Personaje("Danurris", "MAGO");
+            Mago danaChar = new Mago("Danurris");
             agregarItemAlCatalogo("El principito", "LIBRO", 0, 0);
                 Hechizo magiaDana = new Hechizo("Desconocerse", "Daño", 69);
-                GetItem("El principito").AñadirHechizo(magiaDana);
+                Libro danaBook = GetItem("El principito") as Libro;
+                danaBook.AñadirHechizo(magiaDana);
             danaChar.AddItem(GetItem("Armadura de Acero"));
             danaChar.AddItem(GetItem("El principito"));
             
-            Personaje marceChar = new Personaje("Isandril", "MAGO");
+            Mago marceChar = new Mago("Isandril");
             agregarItemAlCatalogo("Arcaneum", "LIBRO", 0, 0);
                 Hechizo magiaMarce2 = new Hechizo("Rejuvenecer", "Curación", 50);
                 Hechizo magiaMarce = new Hechizo("Tormenta de Arena", "Daño", 45);
-                GetItem("Arcaneum").AñadirHechizo(magiaMarce);
-                GetItem("Arcaneum").AñadirHechizo(magiaMarce2);
+                Libro marceBook = GetItem("Arcaneum") as Libro;
+                marceBook.AñadirHechizo(magiaMarce);
+                marceBook.AñadirHechizo(magiaMarce2);
             agregarItemAlCatalogo("Toga de Fuego", "ARMADURA", 0, 12);
             marceChar.AddItem(GetItem("Toga de Fuego"));
             marceChar.AddItem(GetItem("Arcaneum"));
 
-            Personaje alonsoChar = new Personaje("Torbjorn", "ENANO");
+            Enano alonsoChar = new Enano("Torbjorn");
             agregarItemAlCatalogo("Mjollnir", "ARMA", 85, 0);
             agregarItemAlCatalogo("Cota de Konan", "ARMADURA", 0, 15);
             alonsoChar.AddItem(GetItem("Mjollnir"));
@@ -64,15 +66,15 @@ namespace Program
             agregarItemAlCatalogo("Armadura de Acero", "ARMADURA", 0, 8);
             agregarItemAlCatalogo("Libro de Curación", "LIBRO", 0, 0);
             Hechizo smallCure = new Hechizo ("Cura Pequeña", "Curación", 10);
-            GetItem("Libro de Curación").AñadirHechizo(smallCure);
+            (GetItem("Libro de Curación") as Libro).AñadirHechizo(smallCure);
             agregarItemAlCatalogo("Libro de Hechizos de Fuego", "LIBRO", 0, 0);
             Hechizo smallDmg = new Hechizo ("Bola de Fuego pequeña", "Daño", 12);
-            GetItem("Libro de Hechizos de Fuego").AñadirHechizo(smallDmg);
+            (GetItem("Libro de Hechizos de Fuego") as Libro).AñadirHechizo(smallDmg);
             agregarItemAlCatalogo("Libro Maestro de Magia", "LIBRO", 0, 0);
             Hechizo bigCure = new Hechizo ("Sanación Profunda", "Curación", 20);
             Hechizo bigDmg = new Hechizo ("Misil mágico", "Daño", 22);
-            GetItem("Libro Maestro de Magia").AñadirHechizo(bigCure);
-            GetItem("Libro Maestro de Magia").AñadirHechizo(bigDmg);
+            (GetItem("Libro Maestro de Magia") as Libro).AñadirHechizo(bigCure);
+            (GetItem("Libro Maestro de Magia") as Libro).AñadirHechizo(bigDmg);
         }
 
         private static void agregarItemAlCatalogo(string name, string tipo, int daño, int defensa)
