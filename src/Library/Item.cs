@@ -1,4 +1,4 @@
-using System.Collections;
+/* using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Collections.Generic;
@@ -12,9 +12,9 @@ namespace Program
         private int _dmg;
         private int _def;
 
-        private List<IHechizo> hechizosGuardados;
+        private List<Hechizo> hechizosGuardados;
 
-        public List<IHechizo> HechizosGuardados 
+        public List<Hechizo> HechizosGuardados 
 
         {
             get
@@ -117,12 +117,13 @@ namespace Program
 
         }
         
-         /* CrearItemsGenericos para copiar y pegar
+          CrearItemsGenericos para copiar y pegar
 
             Item espadaStarter = new Item("Espada de Madera", "ARMA", 8, 0);
             Item espadaAvanzada = new Item("Espada de Diamante", "ARMA", 16, 0);
             Item armaduraStarter = new Item("Armadura de Cuero", "ARMADURA", 0, 4);
             Item armaduraAvanzada = new Item("Armadura de Acero", "ARMADURA", 0, 8);
-         */
+         
     }
 }
+*/
