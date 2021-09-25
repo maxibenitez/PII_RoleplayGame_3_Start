@@ -22,7 +22,11 @@ namespace Program
 
         IAttack Arma{get;}
 
-        public IDefense Armadura{get;}
+        IDefense Armadura{get;}
+
+        int Ataque {get;}
+
+        int Defensa {get;}
     }
 }
 

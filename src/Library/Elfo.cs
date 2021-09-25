@@ -21,8 +21,21 @@ namespace Program
 
     public IAttack Arma{get;}
 
+    public int Ataque 
+    {
+      get
+      {
+        return Arma.DMG + IPersonaje.K_AtaqueBase;
+      }
+    }
     public IDefense Armadura{get;}
-
+    public int Defensa 
+        {
+          get
+          {
+            return Armadura.DEF + IPersonaje.K_DefensaBase;
+          }
+        }
     public Elfo(string nombre)
     {
       this.Nombre = nombre;
