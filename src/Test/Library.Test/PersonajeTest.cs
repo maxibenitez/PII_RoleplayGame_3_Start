@@ -8,34 +8,36 @@ namespace Test.Library
     public class PersonajeTest
     {
       [Test]
-
       public void ConstruirPersonajeTest()
       {
-        Personaje p = new Personaje("Messi", "MAGO");
+        Mago p = new Mago("Messi");
         string expectedName = "Messi";
-        string expectedSpecies = "MAGO";
 
         Assert.AreSame(expectedName, p.Nombre);
-        Assert.AreSame(expectedSpecies, p.Especie);
+
+        Elfo p = new Elfo("Messi");
+        Assert.AreSame(expectedName, p.Nombre);
+
+        Enano p = new Enano("Messi");
+        Assert.AreSame(expectedName, p.Nombre);
       }
 
       [Test]
       public void AddItemTest()
       {
-        Personaje p = new Personaje("Messi", "MAGO");
-        Item i = new Item("Espada de Diamante", "ARMA", 16, 0);
+        Elfo p = new Elfo("Messi");
+        Espada i = new Espada("Espada de Diamante", 16);
 
         p.AddItem(i);
         bool IteminInventario = p.Inventario.Contains(i);
-
         Assert.IsTrue(IteminInventario);
       }
 
       [Test]
       public void RemoveItemTest()
       {
-        Personaje p = new Personaje("Messi", "MAGO");
-        Item i = new Item("Espada de Diamante", "ARMA", 16, 0);
+        Elfo p = new Elfo("Messi");
+        Espada i = new Espada("Espada de Diamante", 16);
 
         p.AddItem(i);
         p.RemoveItem(i);
@@ -47,8 +49,8 @@ namespace Test.Library
       [Test]
       public void ArmaTest()
       {
-        Personaje p = new Personaje("Messi", "MAGO");
-        Item i = new Item("Espada de Diamante", "ARMA", 16, 0);
+        Elfo p = new Elfo("Messi");
+        Espada i = new Espada("Espada de Diamante", 16);
 
         p.AddItem(i);
 
@@ -58,7 +60,7 @@ namespace Test.Library
       [Test]
       public void HPTest()
       {
-        Personaje p = new Personaje("Messi", "MAGO");
+        Elfo p = new Elfo("Messi");
 
         p.HP = -20;
 
@@ -70,9 +72,9 @@ namespace Test.Library
       [Test]
       public void AtaqueTest()
       {
-        Personaje p = new Personaje("Messi", "MAGO");
-        Item i = new Item("Espada de Diamante", "ARMA", 16, 0);
-        Item e = new Item("Espada de Madera", "ARMA", 20, 0);
+        Elfo p = new Elfo("Messi");
+        Espada i = new Espada("Espada de Diamante", 16);
+        Espada e = new Espada("Espada de Plata", 20);
 
         p.AddItem(i);
         p.AddItem(e);
@@ -85,9 +87,9 @@ namespace Test.Library
       [Test]
       public void DefensaTest()
       {
-        Personaje p = new Personaje("Messi", "MAGO");
-        Item i = new Item("Armadura de Cuero", "ARMADURA", 16, 0);
-        Item e = new Item("Armadura de Acero", "ARMADURA", 20, 2);
+        Elfo p = new Elfo("Messi");
+        Pechera i = new Pechera("Armadura de Cuero", 16);
+        Pechera e = new Pechera("Armadura de Oro", 20);
 
         p.AddItem(i);
         p.AddItem(e);
@@ -99,8 +101,8 @@ namespace Test.Library
 
       [Test]
       public void LibroEquipadoTest(){
-        Personaje p = new Personaje("Messi", "MAGO");
-        Item i = new Item("El Principito", "LIBRO", 16, 0);
+        Mago p = new Mago("Messi");
+        Libro i = new Libro("El Principito");
 
         p.AddItem(i);
 
