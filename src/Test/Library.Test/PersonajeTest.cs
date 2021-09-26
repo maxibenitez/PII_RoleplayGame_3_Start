@@ -15,11 +15,11 @@ namespace Test.Library
 
         Assert.AreSame(expectedName, p.Nombre);
 
-        Elfo p = new Elfo("Messi");
-        Assert.AreSame(expectedName, p.Nombre);
+        Elfo i = new Elfo("Messi");
+        Assert.AreSame(expectedName, i.Nombre);
 
-        Enano p = new Enano("Messi");
-        Assert.AreSame(expectedName, p.Nombre);
+        Enano e = new Enano("Messi");
+        Assert.AreSame(expectedName, e.Nombre);
       }
 
       [Test]
@@ -54,7 +54,7 @@ namespace Test.Library
 
         p.AddItem(i);
 
-        Assert.AreSame(i, p.Arma);
+        Assert.AreEqual(i, p.Arma);
       }
 
       [Test]
@@ -108,6 +108,5 @@ namespace Test.Library
 
         Assert.AreSame(i, p.LibroEquipado);
       }
-
     }
 }
