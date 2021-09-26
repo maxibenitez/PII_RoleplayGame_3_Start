@@ -6,7 +6,28 @@ namespace Program
   {
     public string Nombre{get; set;}
 
-    public int HP{get; set;}
+    public int HP
+    {
+      get
+      {
+        return this.HP;
+      } 
+      set
+      {
+        if (value + this.HP < 0)
+        {
+          this.HP = 0;
+        }
+        else if (value + this.HP > IPersonaje.K_maxHP)
+        {
+          this.HP = IPersonaje.K_maxHP;
+        }
+        else
+        {
+          this.HP += value;
+        }
+      }
+    }
 
     public List<IItem> Inventario{get;}
 
