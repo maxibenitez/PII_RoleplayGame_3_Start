@@ -23,9 +23,12 @@ namespace Program
     {
       get
       {
-        foreach (IAttack item in Inventario)
+        foreach (IItem item in Inventario)
         {
-          return item;
+          if(item.GetType().Equals(typeof(IAttack)))
+          {
+            return item as IAttack;
+          }
         }
         return new Espada ("Manos", 0);
       }
@@ -34,16 +37,19 @@ namespace Program
     {
       get
       {
-        return Arma.DMG + IPersonaje.K_AtaqueBase;
+        return this.Arma.DMG + IPersonaje.K_AtaqueBase;
       }
     }
     public IDefense Armadura
     {
       get
       {
-        foreach (IDefense item in Inventario)
+        foreach (IItem item in Inventario)
         {
-          return item;
+          if (item.GetType().Equals(typeof(IDefense)))
+          {
+            return item as IDefense;
+          }
         }
         return new Pechera ("Desnudo", 0);
       }
@@ -60,6 +66,7 @@ namespace Program
     {
       this.Nombre = nombre;
       this.HP = IPersonaje.K_maxHP;
+      this.Inventario = new List<IItem>{};
     }
   }
 }

@@ -25,7 +25,7 @@ namespace Program
 
         public void AñadirHechizo(Hechizo hechizo)
         {
-            this.HechizosGuardados.Add(hechizo);
+            this.hechizosGuardados.Add(hechizo);
         }
 
         public string VerHechizosGuardados()
