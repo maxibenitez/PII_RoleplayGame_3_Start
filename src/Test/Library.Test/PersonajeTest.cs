@@ -61,6 +61,8 @@ namespace Test.Library
       public void HPTest()
       {
         Elfo p = new Elfo("Messi");
+        Enano i = new Enano("Gloin")
+        Ataque(i, p);
 
         p.HP = -20;
 
@@ -103,10 +105,12 @@ namespace Test.Library
       public void LibroEquipadoTest(){
         Mago p = new Mago("Messi");
         Libro i = new Libro("El Principito");
+        Hechizo e = new Hechizo("Kame-hame-ha", "Daño", 5);
 
         p.AddItem(i);
+        i.AñadirHechizo(e);
 
-        Assert.AreSame(i, p.LibroEquipado);
+        Assert.IsTrue(p.LibroEquipado.Contains(e));
       }
     }
 }

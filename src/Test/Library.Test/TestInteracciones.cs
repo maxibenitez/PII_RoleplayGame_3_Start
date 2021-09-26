@@ -112,7 +112,7 @@ namespace Test.Library
             Mago marceChar = new Mago("Isandril");
             Libro libro2 = new Libro("Arcaneum");
             Hechizo magiaMarce = new Hechizo("Tormenta de Arena", "Daño", 45);
-            Hechizo curaMarce = new Hechizo("Poción", "Curación", 60);
+            Hechizo curaMarce = new Hechizo("Poción", "Curación", 70);
             libro2.AñadirHechizo(magiaMarce);
             libro2.AñadirHechizo(curaMarce);
             marceChar.AddItem(libro2);
