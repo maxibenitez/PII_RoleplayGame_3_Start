@@ -61,12 +61,10 @@ namespace Test.Library
       public void HPTest()
       {
         Elfo p = new Elfo("Messi");
-        Enano i = new Enano("Gloin")
-        Ataque(i, p);
+        Enano i = new Enano("Gloin");
+        Interacciones.Ataque(i, p);
 
-        p.HP = -20;
-
-        int ExpectedHP = 0;
+        int ExpectedHP = 97;
 
         Assert.AreEqual(ExpectedHP, p.HP);
       }
@@ -96,7 +94,7 @@ namespace Test.Library
         p.AddItem(i);
         p.AddItem(e);
 
-        int ExpectedDefensa = 4;
+        int ExpectedDefensa = 22;
 
         Assert.AreEqual(ExpectedDefensa, p.Defensa);
       }

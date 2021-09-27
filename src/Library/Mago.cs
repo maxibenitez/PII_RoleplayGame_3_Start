@@ -21,14 +21,15 @@ namespace Program
     {
       get
       {
+        IAttack mejorArma = new Espada ("Manos", 0);
         foreach (IItem item in Inventario)
         {
-          if(item.GetType().Equals(typeof(IAttack)))
+          if(item is IAttack && ((IAttack) item).DMG > mejorArma.DMG)
           {
-            return item as IAttack;
+            mejorArma = (IAttack) item;
           }
         }
-        return new Espada ("Manos", 0);
+        return mejorArma;
       }
     }
     public int Ataque 
@@ -42,14 +43,15 @@ namespace Program
     {
       get
       {
+        IDefense mejorArmadura = new Pechera ("Desnudo", 0);
         foreach (IItem item in Inventario)
         {
-          if (item.GetType().Equals(typeof(IDefense)))
+          if(item is IDefense && ((IDefense) item).DEF > mejorArmadura.DEF)
           {
-            return item as IDefense;
+            mejorArmadura = (IDefense) item;
           }
         }
-        return new Pechera ("Desnudo", 0);
+        return mejorArmadura;
       }
     }
     public int Defensa 
@@ -66,7 +68,7 @@ namespace Program
       {
         foreach (IItem item in Inventario)
         {
-          if (item.GetType().Equals(typeof(Libro)))
+          if (item is Libro)
           {
           return (item as Libro).HechizosGuardados;
           }

@@ -8,10 +8,12 @@ namespace Program
         //personajes implicados y realizar las operaciones y controles necesarios. Es aplicación de EXPERT y SRP, al delegar la impresión a ConsoleLogger
         public static void Ataque(IPersonaje atacante, IPersonaje atacado)
         {
-            atacado.HP -= atacante.Ataque - atacado.Defensa;
-            if(atacado.HP < 0)
-            {
-                atacado.HP = 0;
+            if (atacante.Ataque > atacado.Defensa) {
+                atacado.HP -= atacante.Ataque - atacado.Defensa;
+                if(atacado.HP < 0)
+                {
+                    atacado.HP = 0;
+                }
             }
 
             //se le envía los datos de los personajes implicados en ataque para que se imprima en pantalla
