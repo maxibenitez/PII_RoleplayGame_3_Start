@@ -10,19 +10,23 @@ namespace Program
 
         public const int K_maxHP = 100;
 
-        public string Nombre{get; set;}
+        string Nombre{get; set;}
 
-        public int HP{get; set;}
+        int HP{get; set;}
 
-        public List<IItem> Inventario{get;}
+        List<IItem> Inventario{get;}
 
-        public void AddItem(IItem item);
+        void AddItem(IItem item);
 
-        public void RemoveItem(IItem item);
+        void RemoveItem(IItem item);
 
-        public IAttack Arma{get;}
+        IAttack Arma{get;}
 
-        public IDefense Armadura{get;}
+        IDefense Armadura{get;}
+
+        int Ataque {get;}
+
+        int Defensa {get;}
     }
 }
 

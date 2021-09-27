@@ -5,13 +5,13 @@ namespace Program
         string Name{get; set;}
     }
 
-    public interface IDefense
+    public interface IDefense : IItem
     {
-        int DEF {get; set;}   
+        int DEF {get;}   
     }
 
-    public interface IAttack
+    public interface IAttack : IItem
     {
-        int DMG {get; set;}
+        int DMG {get;}
     }
 }

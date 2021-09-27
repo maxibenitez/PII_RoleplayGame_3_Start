@@ -6,9 +6,9 @@ namespace Program
     public class Libro : IItem
     {
 
-        private List<IHechizo> hechizosGuardados = new List<IHechizo>();
+        private List<Hechizo> hechizosGuardados = new List<Hechizo>();
 
-        public List<IHechizo> HechizosGuardados 
+        public List<Hechizo> HechizosGuardados 
         {
             get
             {
@@ -23,9 +23,9 @@ namespace Program
             this.Name = nombre;
         }
 
-        public void AñadirHechizo(IHechizo hechizo)
+        public void AñadirHechizo(Hechizo hechizo)
         {
-            this.HechizosGuardados.Add(hechizo);
+            this.hechizosGuardados.Add(hechizo);
         }
 
         public string VerHechizosGuardados()
