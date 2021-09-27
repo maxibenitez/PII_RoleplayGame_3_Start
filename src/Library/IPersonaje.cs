@@ -16,10 +16,6 @@ namespace Program
 
         List<IItem> Inventario{get;}
 
-        void AddItem(IItem item);
-
-        void RemoveItem(IItem item);
-
         IAttack Arma{get;}
 
         IDefense Armadura{get;}
@@ -27,6 +23,10 @@ namespace Program
         int Ataque {get;}
 
         int Defensa {get;}
+
+        void AddItem(IItem item);
+
+        void RemoveItem(IItem item);
     }
 }
 
