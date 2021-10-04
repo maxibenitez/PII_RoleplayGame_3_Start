@@ -10,13 +10,13 @@ namespace Test.Library
         public void Ataque()
         //se testea la interacción de ataque
         {
-            Mago danaChar = new Mago("Danurris", "Enemies");
+            Mago danaChar = new Mago("Danurris", 1, "Enemies");
             Libro libro1 = new Libro("El principito");
             Hechizo magiaDana = new Hechizo("Desconocerse", "Daño", 70);
             libro1.AñadirHechizo(magiaDana);
             danaChar.AddItem(libro1);
             
-            Enano alonsoChar = new Enano("Torbjorn", "Enemies");
+            Enano alonsoChar = new Enano("Torbjorn", 1, "Enemies");
             Espada arma = new Espada("Mjollnir",18);
             Pechera armadura = new Pechera("Cota de Konan",13);
             alonsoChar.AddItem(arma);
@@ -34,13 +34,13 @@ namespace Test.Library
         public void LanzamientoHechizoAtaque()
         //se testea la interacción de ataque con lanzamiento de hechizo
         {
-            Mago danaChar = new Mago("Danurris", "Enemies");
+            Mago danaChar = new Mago("Danurris", 1, "Enemies");
             Libro libro1 = new Libro("El principito");
             Hechizo magiaDana = new Hechizo("Desconocerse", "Daño", 70);
             libro1.AñadirHechizo(magiaDana);
             danaChar.AddItem(libro1);
             
-            Mago marceChar = new Mago("Isandril", "Heroes");
+            Mago marceChar = new Mago("Isandril", 0, "Heroes");
             Libro libro2 = new Libro("Arcaneum");
             Hechizo magiaMarce = new Hechizo("Tormenta de Arena", "Daño", 45);
             Hechizo curaMarce = new Hechizo("Poción", "Curación", 60);
@@ -48,7 +48,7 @@ namespace Test.Library
             libro2.AñadirHechizo(curaMarce);
             marceChar.AddItem(libro2);
 
-            Enano alonsoChar = new Enano("Torbjorn", "Enemies");
+            Enano alonsoChar = new Enano("Torbjorn", 1, "Enemies");
             Espada arma = new Espada("Mjollnir",18);
             Pechera armadura = new Pechera("Cota de Konan",13);
             alonsoChar.AddItem(arma);
@@ -68,13 +68,13 @@ namespace Test.Library
         public void LanzamientoHechizoCuracion()
         //se testea la interacción de curación con lanzamiento de hechizo
         {
-            Mago danaChar = new Mago("Danurris", "Enemies");
+            Mago danaChar = new Mago("Danurris", 1, "Enemies");
             Libro libro1 = new Libro("El principito");
             Hechizo magiaDana = new Hechizo("Desconocerse", "Daño", 70);
             libro1.AñadirHechizo(magiaDana);
             danaChar.AddItem(libro1);
             
-            Mago marceChar = new Mago("Isandril", "Heroes");
+            Mago marceChar = new Mago("Isandril", 1, "Heroes");
             Libro libro2 = new Libro("Arcaneum");
             Hechizo magiaMarce = new Hechizo("Tormenta de Arena", "Daño", 45);
             Hechizo curaMarce = new Hechizo("Poción", "Curación", 60);
@@ -82,7 +82,7 @@ namespace Test.Library
             libro2.AñadirHechizo(curaMarce);
             marceChar.AddItem(libro2);
 
-            Enano alonsoChar = new Enano("Torbjorn", "Enemies");
+            Enano alonsoChar = new Enano("Torbjorn", 1, "Enemies");
             Espada arma = new Espada("Mjollnir",18);
             Pechera armadura = new Pechera("Cota de Konan",13);
             alonsoChar.AddItem(arma);
@@ -103,13 +103,13 @@ namespace Test.Library
         public void Curacion()
         //se testea la interacción de curación no sobrepase la vida máxima
         {
-            Mago danaChar = new Mago("Danurris", "Enemies");
+            Mago danaChar = new Mago("Danurris", 1, "Enemies");
             Libro libro1 = new Libro("El principito");
             Hechizo magiaDana = new Hechizo("Desconocerse", "Daño", 70);
             libro1.AñadirHechizo(magiaDana);
             danaChar.AddItem(libro1);
             
-            Mago marceChar = new Mago("Isandril", "Heroes");
+            Mago marceChar = new Mago("Isandril", 0, "Heroes");
             Libro libro2 = new Libro("Arcaneum");
             Hechizo magiaMarce = new Hechizo("Tormenta de Arena", "Daño", 45);
             Hechizo curaMarce = new Hechizo("Poción", "Curación", 70);
@@ -117,7 +117,7 @@ namespace Test.Library
             libro2.AñadirHechizo(curaMarce);
             marceChar.AddItem(libro2);
 
-            Enano alonsoChar = new Enano("Torbjorn", "Enemies");
+            Enano alonsoChar = new Enano("Torbjorn", 1, "Enemies");
             Espada arma = new Espada("Mjollnir",18);
             Pechera armadura = new Pechera("Cota de Konan",13);
             alonsoChar.AddItem(arma);

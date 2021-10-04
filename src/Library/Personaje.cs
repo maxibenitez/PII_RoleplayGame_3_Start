@@ -10,27 +10,73 @@ namespace Program
 
         public const int K_maxHealth = 100;
 
-        public abstract string Nombre{get; set;}
+        public string Nombre{get; set;}
 
-        public abstract int Health{get; set;}
+        public int Health{get; set;}
 
-        public abstract int VP{get;}
+        public int VP{get; set;}
 
-        public abstract string TipoPersonaje{get; set;}
+        public string TipoPersonaje{get; set;}
 
-        List<IItem> Inventario{get;}
+        public IAttack Arma
+        {
+            get
+            {
+                IAttack mejorArma = new Espada ("Manos", 0);
+                foreach (IItem item in Inventario)
+                {
+                if(item is IAttack && ((IAttack) item).Damage > mejorArma.Damage)
+                {
+                    mejorArma = (IAttack) item;
+                }
+                }
+                return mejorArma;
+            }
+        }
 
-        public abstract IAttack Arma{get;}
+        public IDefense Armadura
+        {
+            get
+            {
+                IDefense mejorArmadura = new Pechera ("Desnudo", 0);
+                foreach (IItem item in Inventario)
+                {
+                if(item is IDefense && ((IDefense) item).Defense > mejorArmadura.Defense)
+                {
+                    mejorArmadura = (IDefense) item;
+                }
+                }
+                return mejorArmadura;
+            }
+        }
 
-        public abstract IDefense Armadura{get;}
+        public int Ataque 
+        {
+            get
+            {
+                return this.Arma.Damage + Personaje.K_AtaqueBase;
+            }
+        }
 
-        public abstract int Ataque {get;}
+        public int Defensa 
+        {
+            get
+            {
+                return this.Armadura.Defense + Personaje.K_DefensaBase;
+            }
+        }
 
-        public abstract int Defensa {get;}
+        public List<IItem> Inventario{get; set;}
 
-        public abstract void AddItem(IItem item);
+        public void AddItem(IItem item)
+        {
+            this.Inventario.Add(item);
+        }
 
-        public abstract void RemoveItem(IItem item);
+        public void RemoveItem(IItem item)
+        {
+            this.Inventario.Remove(item);
+        }
     }
 }
 

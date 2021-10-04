@@ -5,20 +5,20 @@
         static void Main(string[] args)
         {
         //los personajes los ideaban cada integrante, Alonso solo escribió la implementación
-            Elfo maxiChar = new Elfo("Legolas", "Heroes");
+            Elfo maxiChar = new Elfo("Legolas", 0, "Heroes");
             Espada arco = new Espada("Arco élfico",14);
             Pechera cota = new Pechera("Cota de Malla élfica",8);
             maxiChar.AddItem(arco);
             maxiChar.AddItem(cota);
 
-            Mago danaChar = new Mago("Danurris", "Enemies");
+            Mago danaChar = new Mago("Danurris", 1, "Enemies");
             Libro danaBook = new Libro("El principito");
             Hechizo magiaDana = new Hechizo("Desconocerse", "Daño", 69);
             danaBook.AñadirHechizo(magiaDana);
             danaChar.AddItem(cota);
             danaChar.AddItem(danaBook);
             
-            Mago marceChar = new Mago("Isandril", "Heroes");
+            Mago marceChar = new Mago("Isandril", 0, "Heroes");
             Libro marceBook = new Libro("Arcaneum");
             Hechizo magiaMarce2 = new Hechizo("Rejuvenecer", "Curación", 50);
             Hechizo magiaMarce = new Hechizo("Tormenta de Arena", "Daño", 45);
@@ -28,7 +28,7 @@
             marceChar.AddItem(toga);
             marceChar.AddItem(marceBook);
 
-            Enano alonsoChar = new Enano("Torbjorn", "Enemies");
+            Enano alonsoChar = new Enano("Torbjorn", 1, "Enemies");
             Espada thor = new Espada("Mjollnir",85);
             Pechera konan = new Pechera("Cota de Konan",15);
             alonsoChar.AddItem(thor);
