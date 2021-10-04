@@ -4,13 +4,12 @@ namespace Program
   {
     public string Name{get; set;}
 
-    public int DMG{get; private set;}
+    public int Damage{get; private set;}
 
-    public Espada(string name, int dmg)
+    public Espada(string name, int damage)
     {
       this.Name = name;
-      this.DMG = dmg;
+      this.Damage = damage;
     }
-
   }
 }

@@ -2,31 +2,35 @@ using System.Collections.Generic;
 
 namespace Program
 {
-  public class Elfo : IPersonaje
+  public class Elfo : Personaje
   {
-    public string Nombre{get; set;}
+    public override string Nombre{get; set;}
 
-    public int HP{get;set;}
+    public override int Health{get; set;}
+
+    public override int VP{get;}
+
+    public override string TipoPersonaje{get; set;}
 
     public List<IItem> Inventario{get;}
 
-    public void AddItem(IItem item)
+    public override void AddItem(IItem item)
     {
       this.Inventario.Add(item);
     }
-    public void RemoveItem(IItem item)
+    public override void RemoveItem(IItem item)
     {
       this.Inventario.Remove(item);
     }
 
-    public IAttack Arma
+    public override IAttack Arma
     {
       get
       {
         IAttack mejorArma = new Espada ("Manos", 0);
         foreach (IItem item in Inventario)
         {
-          if(item is IAttack && ((IAttack) item).DMG > mejorArma.DMG)
+          if(item is IAttack && ((IAttack) item).Damage > mejorArma.Damage)
           {
             mejorArma = (IAttack) item;
           }
@@ -34,21 +38,21 @@ namespace Program
         return mejorArma;
       }
     }
-    public int Ataque 
+    public override int Ataque 
     {
       get
       {
-        return this.Arma.DMG + IPersonaje.K_AtaqueBase;
+        return this.Arma.Damage + Personaje.K_AtaqueBase;
       }
     }
-    public IDefense Armadura
+    public override IDefense Armadura
     {
       get
       {
         IDefense mejorArmadura = new Pechera ("Desnudo", 0);
         foreach (IItem item in Inventario)
         {
-          if(item is IDefense && ((IDefense) item).DEF > mejorArmadura.DEF)
+          if(item is IDefense && ((IDefense) item).Defense > mejorArmadura.Defense)
           {
             mejorArmadura = (IDefense) item;
           }
@@ -56,17 +60,19 @@ namespace Program
         return mejorArmadura;
       }
     }
-    public int Defensa 
+    public override int Defensa 
         {
           get
           {
-            return this.Armadura.DEF + IPersonaje.K_DefensaBase;
+            return this.Armadura.Defense + Personaje.K_DefensaBase;
           }
         }
-    public Elfo(string nombre)
+    public Elfo(string nombre, string tipo)
     {
       this.Nombre = nombre;
-      this.HP = IPersonaje.K_maxHP;
+      this.Health = Personaje.K_maxHealth;
+      this.VP = 50;
+      this.TipoPersonaje = tipo;
       this.Inventario = new List<IItem>{};
     }
   }

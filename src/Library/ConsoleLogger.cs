@@ -4,26 +4,29 @@ using System.Text;
 namespace Program {
     public static class ConsoleLogger 
     {
-        public static void ImprimirAtaque(IPersonaje atacante, IPersonaje atacado) 
+        public static void ImprimirAtaque(Personaje atacante, Personaje atacado) 
         {
             StringBuilder sb = new StringBuilder();
+
             sb.Append($"{atacante.Nombre} atacó a {atacado.Nombre} con {atacante.Arma.Name}.");
-            if (atacado.HP > 0) {
-                sb.Append($" {atacado.Nombre} quedó con {atacado.HP} HP.");
+            if (atacado.Health > 0) 
+            {
+                sb.Append($" {atacado.Nombre} quedó con {atacado.Health} de vida.");
             }
-            else {
+            else 
+            {
                 sb.Append($" {atacado.Nombre} ha muerto.");
             }
             Console.WriteLine(sb.ToString());
         }
-        public static void ImprimirCuracion(IPersonaje curador, IPersonaje curado) {
+        public static void ImprimirCuracion(Personaje curador, Personaje curado) {
             StringBuilder sb = new StringBuilder();
             sb.Append($"{curador.Nombre} curó a {curado.Nombre}.");
-            sb.Append($" {curado.Nombre} quedó con {curado.HP} HP.");
+            sb.Append($" {curado.Nombre} quedó con {curado.Health} de vida.");
             Console.WriteLine(sb.ToString());
         }
 
-        public static void ImprimirLanzamientoHechizo(IPersonaje lanzador, Hechizo hechizo, IPersonaje objetivo) {
+        public static void ImprimirLanzamientoHechizo(Personaje lanzador, Hechizo hechizo, Personaje objetivo) {
             StringBuilder sb = new StringBuilder();
             sb.Append($"{lanzador.Nombre} lanzó el hechizo {hechizo.Nombre} a {objetivo.Nombre}, ");
             switch (hechizo.TipoEfecto) 
@@ -35,17 +38,16 @@ namespace Program {
                     sb.Append($"curándole {hechizo.Poder} puntos de vida.");
                     break;
             }
-            sb.Append($" {objetivo.Nombre} quedó con {objetivo.HP} HP.");
-            if (objetivo.HP == 0) {
+            sb.Append($" {objetivo.Nombre} quedó con {objetivo.Health} de vida.");
+            if (objetivo.Health == 0) 
+            {
                 sb.Append($" {objetivo.Nombre} ha muerto.");
             }
             Console.WriteLine(sb.ToString());
         }
-        public static void VerAtaqueYDefensa(IPersonaje personaje)
-        //El metodo para "ver" (o como interpreteamos, "ver en consola") es delegada a la clase ConsoleLogger, ya que la responsabilidad de esta es devolver feedback al usuario
-        //a través de la consola, por lo que va de la mano con esta tarea. Es una aplicación de patrón SRP.
+        public static void VerAtaqueYDefensa(Personaje personaje)
         {
-            Console.WriteLine($"{personaje.Nombre} tiene {personaje.Ataque} puntos de Ataque y {personaje.Defensa} puntos de Armadura");
+            Console.WriteLine($"{personaje.Nombre} tiene {personaje.Ataque} puntos de Ataque y {personaje.Defensa} puntos de Armadura.");
         }
     }
 }

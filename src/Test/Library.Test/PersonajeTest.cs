@@ -10,22 +10,22 @@ namespace Test.Library
       [Test]
       public void ConstruirPersonajeTest()
       {
-        Mago p = new Mago("Messi");
+        Mago p = new Mago("Messi", "Heroes");
         string expectedName = "Messi";
 
         Assert.AreSame(expectedName, p.Nombre);
 
-        Elfo i = new Elfo("Messi");
+        Elfo i = new Elfo("Messi", "Enemies");
         Assert.AreSame(expectedName, i.Nombre);
 
-        Enano e = new Enano("Messi");
+        Enano e = new Enano("Messi", "Heroes");
         Assert.AreSame(expectedName, e.Nombre);
       }
 
       [Test]
       public void AddItemTest()
       {
-        Elfo p = new Elfo("Messi");
+        Elfo p = new Elfo("Messi", "Enemies");
         Espada i = new Espada("Espada de Diamante", 16);
 
         p.AddItem(i);
@@ -36,7 +36,7 @@ namespace Test.Library
       [Test]
       public void RemoveItemTest()
       {
-        Elfo p = new Elfo("Messi");
+        Elfo p = new Elfo("Messi", "Enemies");
         Espada i = new Espada("Espada de Diamante", 16);
 
         p.AddItem(i);
@@ -49,7 +49,7 @@ namespace Test.Library
       [Test]
       public void ArmaTest()
       {
-        Elfo p = new Elfo("Messi");
+        Elfo p = new Elfo("Messi", "Enemies");
         Espada i = new Espada("Espada de Diamante", 16);
 
         p.AddItem(i);
@@ -60,19 +60,19 @@ namespace Test.Library
       [Test]
       public void HPTest()
       {
-        Elfo p = new Elfo("Messi");
-        Enano i = new Enano("Gloin");
+        Elfo p = new Elfo("Messi", "Enemies");
+        Enano i = new Enano("Gloin", "Heroes");
         Interacciones.Ataque(i, p);
 
         int ExpectedHP = 97;
 
-        Assert.AreEqual(ExpectedHP, p.HP);
+        Assert.AreEqual(ExpectedHP, p.Health);
       }
 
       [Test]
       public void AtaqueTest()
       {
-        Elfo p = new Elfo("Messi");
+        Elfo p = new Elfo("Messi", "Enemies");
         Espada i = new Espada("Espada de Diamante", 16);
         Espada e = new Espada("Espada de Plata", 20);
 
@@ -87,7 +87,7 @@ namespace Test.Library
       [Test]
       public void DefensaTest()
       {
-        Elfo p = new Elfo("Messi");
+        Elfo p = new Elfo("Messi", "Enemies");
         Pechera i = new Pechera("Armadura de Cuero", 16);
         Pechera e = new Pechera("Armadura de Oro", 20);
 
@@ -101,7 +101,7 @@ namespace Test.Library
 
       [Test]
       public void LibroEquipadoTest(){
-        Mago p = new Mago("Messi");
+        Mago p = new Mago("Messi", "Heroes");
         Libro i = new Libro("El Principito");
         Hechizo e = new Hechizo("Kame-hame-ha", "Daño", 5);
 
